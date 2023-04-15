@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>서주환의 실험실</title>
+  <style>
+    /* body 요소에 스타일 적용 */
+    body {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 6rem;
+      font-weight: bold;
+      background-color: #e8d5e0;
+      transition: background-color 0.5s ease-in-out;
+    }
+
+    /* 서주환 글자에 스타일 적용 */
+    #name {
+      display: inline-block;
+      transition: transform 0.1s ease-out;
+    }
+
+    /* 마우스가 서주환 글자에 닿았을 때 효과 */
+    #name:hover {
+      transform: rotate(5deg);
+    }
+
+    /* 마우스 커서가 서주환 글자를 따라다니는 효과 */
+    #name:hover::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 30px;
+      height: 30px;
+      background-color: #b48ead;
+      border-radius: 50%;
+      pointer-events: none;
+      animation: ripple 1s linear infinite;
+    }
+
+    /* 애니메이션 효과 정의 */
+    @keyframes ripple {
+      0% {
+        transform: scale(1);
+        opacity: 0.8;
+      }
+      100% {
+        transform: scale(10);
+        opacity: 0;
+      }
+    }
+
+    /* 마우스가 서주환 글자에 닿았을 때 배경색 변경 */
+    #name:hover ~ body {
+      background-color: #b48ead;
+    }
+
+    /* 이상하다 단어에 스타일 적용 */
+    .weird-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 2rem;
+      color: #b48ead;
+      font-weight: bold;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+  <h1 id="name">서주환</h1>
+
+  <!-- JavaScript 파일 추가 -->
+  <script src="script.js"></script>
+  <!-- Bootstrap JS 추가 -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.1/dist/esm/popper">
+  </script>
+  
+
+ 
